@@ -1,2 +1,20 @@
-Nombre: Gonzalo Exequiel 
-Apellido: Rivero Tabares
+# UrbanSneakers
+
+Alumno: Gonzalo Exequiel Rivero Tabares 
+
+## Descripción del proyecto
+UrbanSneakers es un proyecto de ecommerce de **venta de zapatillas**, desarrollado en HTML.
+
+## Archivos principales
+- `index.html` → Página de inicio con enlaces a login y registro.  
+- `login_usuarios.html` → Formulario para iniciar sesión.  
+- `registro_usuarios.html` → Formulario para registrarse con nombre, apellido, email, contraseña y fecha de nacimiento.  
+
+## Cómo usar
+1. Abrir `index.html` en un navegador web.  
+2. Desde la página de inicio, elegir entre registrarse o iniciar sesión.  
+3. Completar los formularios según corresponda.  
+
+## Notas
+- Proyecto realizado como **primera etapa** de la materia Aplicaciones Web 1.  
+- Está desarrollado solo con HTML básico, sin JavaScript ni CSS.
