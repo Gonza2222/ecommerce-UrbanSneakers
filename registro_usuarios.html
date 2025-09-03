@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrate</title>
+</head>
+<body>
+    <div>
+        <form>
+            <h2>Registrate</h2>
+            <fieldset>
+            <legend>Ingresa tus datos</legend>
+            <div class="form_input">
+                <label for="nombre">Nombre/s</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Juan" required>
+            </div>  
+            <div class="form_input">
+                <label for="apellido">Apellido/s</label>
+                <input type="text" name="apellido" id="apellido" placeholder="Perez" required>
+            </div>
+            <div class="form_input">
+                <label for="correo">Email</label>
+                <input type="email" name="correo" id="correo" placeholder="JuanPerez@gmail.com" required>
+            </div>        
+            <div class="form_input">
+                <label for="contrasena">Password</label>
+                <input type="password" name="contrasena" id="contrasena"required minlength="8" maxlength="16">
+            </div>         
+            <div class="form_input">
+                <label for="fecha_nacimiento">Fecha de nacimiento</label>
+                <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required min="1960-01-01" max="2025-01-01">
+            </div>
+            <div class="form_buttons">
+                <button type="submit">Registrarse</button>
+            </div>
+            </fieldset>
+            <div>
+                <a href="index.html">Volver a la página principal</a>
+            </div>          
+        </form>
+    </div>
+</body>
+</html>
