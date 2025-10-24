@@ -1,0 +1,137 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Título principal */
+.titulo_principal {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: #fff;
+    font-size: 2.5em;
+}
+
+/* Header: registro e inicio de sesión */
+header {
+    text-align: center;
+    padding: 10px;
+    background-color: #eee;
+}
+
+header p, header a {
+    margin: 5px;
+    font-size: 1em;
+    color: #333;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Barra de navegación */
+.barra_navegacion {
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+}
+
+.barra_navegacion a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.barra_navegacion a:hover {
+    color: #ff6600;
+}
+
+/* Galería de zapatillas */
+.galeria-zapatillas {
+    padding: 30px;
+    text-align: center;
+}
+
+.galeria-zapatillas h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.contenedor-zapatillas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.zapatilla {
+    width: 220px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.zapatilla:hover {
+    transform: scale(1.05);
+}
+
+.zapatilla img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.zapatilla p {
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* Botón de compra */
+.btn-comprar {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-comprar:hover {
+    background-color: #e65c00;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: #eee;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-info h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-size: 0.95em;
+}
