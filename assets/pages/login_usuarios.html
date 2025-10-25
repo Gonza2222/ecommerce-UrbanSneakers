@@ -4,26 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-    <div>
+    <main class="login-container">
         <form>
-            <fieldset>
-            <legend>Iniciar sesion</legend>
+            <h2>Iniciar sesión</h2>
             <div class="form_input">
-                <label for="correo">Ingresa tu email</label>
+                <label for="correo">Email</label>
                 <input type="email" name="correo" id="correo" required>
             </div>
             <div class="form_input">
-                <label for="contrasena">Ingresa tu contraseña</label>
+                <label for="contrasena">Contraseña</label>
                 <input type="password" name="contrasena" id="contrasena" required>
             </div>
-            <div>
-                <button type="submit">Iniciar sesión</button>
-            </div>
-            </fieldset>
-            <a href="/index.html">Volver a la página principal</a>
+            <button type="submit">Ingresar</button>
+            <a href="/index.html">← Volver a la página principal</a>
         </form>
-    </div>
+    </main>
 </body>
 </html>
