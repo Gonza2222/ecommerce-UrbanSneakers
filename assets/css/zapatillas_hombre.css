@@ -72,10 +72,12 @@ header a:hover {
 }
 
 .contenedor-zapatillas {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
     gap: 20px;
-    flex-wrap: wrap;
+    max-width: 1000px; /* controla el ancho total del grid */
+    margin: 0 auto; /* centra el grid horizontalmente */
+    padding: 0 20px; /* espacio lateral interno */
 }
 
 .zapatilla {

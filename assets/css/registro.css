@@ -1,35 +1,58 @@
-body{
-    background-color: #f4f4f4;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.login-container {
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+.registro-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding-top: 20px;
+    min-height: 100vh;
+    padding-top:  0 20px;
 }
 
 
 form {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.658);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     width: 100%;
-    max-width: 600px; 
-    margin-top: -250px;
+    max-width: 600px;
 }
 
 
 form h2 {
-    font-family: 'Segoe UI', sans-serif;
     font-size: 2em;
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     text-align: center;
     color: #111;
+}
+
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
 }
 
 
@@ -39,14 +62,20 @@ form h2 {
     flex-direction: column;
 }
 
+.form_label{
+    margin-top: 15px;
+}
+
 label {
     margin-bottom: 6px;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 1.05em;
 }
 
+input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="date"] {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -60,6 +89,18 @@ input:focus {
 }
 
 
+.form_input.checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
 button[type="submit"] {
     width: 100%;
     padding: 12px;
@@ -71,12 +112,12 @@ button[type="submit"] {
     font-size: 1.1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 15px;
 }
 
 button[type="submit"]:hover {
     background-color: #e65c00;
 }
+
 
 a {
     display: block;

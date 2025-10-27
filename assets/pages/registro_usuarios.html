@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrate</title>
+    <link rel="stylesheet" href="../css/registro.css">
 </head>
 <body>
-    <div>
-        <!-- Este formulario usa POST: los datos se envían ocultos en el cuerpo -->
-        <!--  <form action="/registrarse" method="post"></form>-->
-        <!-- Este formulario usa GET: los datos se envían en la URL -->
+    <div class="registro-container">
         <form action="" method="get">
-            <h2>Registrate</h2>
+            <h2>Regístrate</h2>
             <fieldset>
-            <legend>Ingresa tus datos</legend>
+            <legend>Ingresá tus datos</legend>
             <div class="form_input">
                 <label for="nombre">Nombre/s</label>
                 <input type="text" name="nombre" id="nombre" placeholder="Juan" required>
@@ -37,9 +35,9 @@
             <div class="form_buttons">
                 <button type="submit">Registrarse</button>
             </div>
-            <div>
+            <div class="form_label">
                 <label for="Terminos_condiciones">Acepto los términos y condiciones</label>
-                <input type="checkbox" name="Terminos_condiciones" id="Terminos_condiciones"  value="ok" required>
+                <input class="checkbox" type="checkbox" name="Terminos_condiciones" id="Terminos_condiciones"  value="ok" required>
             </div>   
             </fieldset>
             <div>
