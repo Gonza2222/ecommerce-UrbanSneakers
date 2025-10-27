@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Fuente-titulo';
+    src: url('../fonts/RubikVinyl-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
     margin: 0;
@@ -19,7 +25,8 @@ body {
     padding: 20px;
     background-color: #111;
     color: #fff;
-    font-size: 2.5em;
+    font-size: 4em;
+    font-family: 'Fuente-titulo', Segoe UI, sans-serif;
 }
 
 
@@ -136,4 +143,16 @@ footer {
 .footer-info p {
     margin: 5px 0;
     font-size: 0.95em;
+}
+
+@media (max-width: 768px) {
+    .contenedor-zapatillas {
+        grid-template-columns: repeat(2, 1fr); /* 2 por fila en tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-zapatillas {
+        grid-template-columns: 1fr; /* 1 por fila en celulares */
+    }
 }
