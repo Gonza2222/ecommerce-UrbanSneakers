@@ -156,3 +156,15 @@ footer {
         grid-template-columns: 1fr; /* 1 por fila en celulares */
     }
 }
+
+@media (max-width: 768px) {
+    .titulo_principal {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo_principal {
+        font-size: 2.2em;
+    }
+}
