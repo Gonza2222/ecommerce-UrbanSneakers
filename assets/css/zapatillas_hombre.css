@@ -11,7 +11,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f4f4f4;
@@ -19,16 +18,29 @@ body {
     line-height: 1.6;
 }
 
-
-.titulo_principal {
-    text-align: center;
+/* Contenedor del logo + título */
+.titulo_con_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
     padding: 20px;
     background-color: #111;
-    color: #fff;
-    font-size: 4em;
-    font-family: 'Fuente-titulo', Segoe UI, sans-serif;
 }
 
+/* Imagen del logo */
+.logo_titulo {
+    width: 120px;
+    height: auto;
+}
+
+/* Título principal */
+.titulo_principal {
+    color: #fff;
+    font-size: 4em;
+    font-family: 'Fuente-titulo', 'Segoe UI', sans-serif;
+    margin: 0;
+}
 
 header {
     text-align: center;
@@ -46,7 +58,6 @@ header p, header a {
 header a:hover {
     text-decoration: underline;
 }
-
 
 .barra_navegacion {
     background-color: #222;
@@ -67,7 +78,6 @@ header a:hover {
     color: #ff6600;
 }
 
-
 .galeria-zapatillas {
     padding: 30px;
     text-align: center;
@@ -80,11 +90,11 @@ header a:hover {
 
 .contenedor-zapatillas {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    max-width: 1000px; /* controla el ancho total del grid */
-    margin: 0 auto; /* centra el grid horizontalmente */
-    padding: 0 20px; /* espacio lateral interno */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .zapatilla {
@@ -110,7 +120,6 @@ header a:hover {
     font-weight: 500;
 }
 
-
 .btn-comprar {
     margin-top: 10px;
     padding: 8px 16px;
@@ -126,7 +135,6 @@ header a:hover {
 .btn-comprar:hover {
     background-color: #e65c00;
 }
-
 
 footer {
     background-color: #111;
@@ -145,26 +153,36 @@ footer {
     font-size: 0.95em;
 }
 
+/* Responsive ajustes */
 @media (max-width: 768px) {
     .contenedor-zapatillas {
-        grid-template-columns: repeat(2, 1fr); /* 2 por fila en tablets */
+        grid-template-columns: repeat(2, 1fr);
     }
-}
 
-@media (max-width: 480px) {
-    .contenedor-zapatillas {
-        grid-template-columns: 1fr; /* 1 por fila en celulares */
-    }
-}
-
-@media (max-width: 768px) {
     .titulo_principal {
         font-size: 3em;
     }
+
+    .logo_titulo {
+        width: 40px;
+    }
 }
 
 @media (max-width: 480px) {
+    .contenedor-zapatillas {
+        grid-template-columns: 1fr;
+    }
+
     .titulo_principal {
         font-size: 2.2em;
+    }
+
+    .logo_titulo {
+        width: 35px;
+    }
+
+    .titulo_con_logo {
+        flex-direction: column;
+        gap: 10px;
     }
 }
