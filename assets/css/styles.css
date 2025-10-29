@@ -49,6 +49,7 @@ header {
 }
 
 header p, header a {
+    font-weight: bold;
     margin: 5px;
     font-size: 1em;
     color: #333;
@@ -79,13 +80,16 @@ header a:hover {
 }
 
 .galeria-zapatillas {
+    background: linear-gradient(to bottom, #1e1e1e, #dbd7d7);
     padding: 30px;
     text-align: center;
+    color: #000000; 
 }
 
 .galeria-zapatillas h2 {
     margin-bottom: 20px;
     font-size: 1.8em;
+    color: #eee;
 }
 
 .contenedor-zapatillas {
