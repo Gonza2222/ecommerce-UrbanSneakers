@@ -140,24 +140,61 @@ header a:hover {
     background-color: #e65c00;
 }
 
-footer {
-    background-color: #111;
-    color: #eee;
-    padding: 20px;
+.footer-info {
+    max-width: 1000px;
+    margin: 0 auto;
     text-align: center;
 }
 
 .footer-info h4 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ff6600;
 }
 
 .footer-info p {
-    margin: 5px 0;
-    font-size: 0.95em;
+    margin: 8px 0;
+    font-size: 1em;
+    line-height: 1.4;
 }
 
-/* Responsive ajustes */
+.footer-info a {
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-info a:hover {
+    color: #ffa64d;
+    text-decoration: underline;
+}
+
+
+.footer-info iframe {
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    height: 250px;
+    margin-top: 10px;
+}
+
+
+footer {
+    background-color: #111;
+    color: #eee;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .footer-info {
+        text-align: center;
+    }
+}
+
+
 @media (max-width: 768px) {
     .contenedor-zapatillas {
         grid-template-columns: repeat(2, 1fr);
