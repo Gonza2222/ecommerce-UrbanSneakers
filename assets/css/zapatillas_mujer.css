@@ -28,13 +28,11 @@ body {
     background-color: #111;
 }
 
-/* Imagen del logo */
 .logo_titulo {
     width: 120px;
     height: auto;
 }
 
-/* Título principal */
 .titulo_principal {
     color: #fff;
     font-size: 4em;
@@ -79,11 +77,12 @@ header a:hover {
     color: #ff6600;
 }
 
+/* Galería */
 .galeria-zapatillas {
     background: linear-gradient(to bottom, #1e1e1e, #dbd7d7);
     padding: 30px;
     text-align: center;
-    color: #000000; 
+    color: #000;
 }
 
 .galeria-zapatillas h2 {
@@ -92,40 +91,84 @@ header a:hover {
     color: #eee;
 }
 
+/* Contenedor de las cards */
 .contenedor-zapatillas {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.zapatilla {
-    width: 220px;
+/* Card individual */
+.card {
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 10px;
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.zapatilla:hover {
+.card:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-.zapatilla img {
+.card img {
     width: 100%;
+    height: 180px;
+    object-fit: contain;
     border-radius: 6px;
+    margin-bottom: 10px;
 }
 
-.zapatilla p {
-    margin-top: 10px;
-    font-weight: 500;
+.card h3 {
+    font-size: 1.1em;
+    margin: 8px 0;
+    text-align: center;
 }
 
-.btn-comprar {
-    margin-top: 10px;
+.card p {
+    font-weight: bold;
+    color: #ff6600;
+    margin-bottom: 10px;
+}
+
+/* Controles de cantidad */
+.cantidad-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.cantidad-control button {
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cantidad-control button:hover {
+    background-color: #e65c00;
+}
+
+.cantidad {
+    min-width: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Botón agregar */
+.btn-agregar {
     padding: 8px 16px;
     background-color: #ff6600;
     color: #fff;
@@ -136,10 +179,11 @@ header a:hover {
     transition: background-color 0.3s ease;
 }
 
-.btn-comprar:hover {
+.btn-agregar:hover {
     background-color: #e65c00;
 }
 
+/* Footer */
 .footer-info {
     max-width: 1000px;
     margin: 0 auto;
@@ -170,7 +214,6 @@ header a:hover {
     text-decoration: underline;
 }
 
-
 .footer-info iframe {
     border-radius: 8px;
     width: 100%;
@@ -179,7 +222,6 @@ header a:hover {
     margin-top: 10px;
 }
 
-
 footer {
     background-color: #111;
     color: #eee;
@@ -187,13 +229,12 @@ footer {
     text-align: center;
 }
 
-
-@media (max-width: 768px) {
-    .footer-info {
-        text-align: center;
+/* Responsive */
+@media (max-width: 1024px) {
+    .contenedor-zapatillas {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
-
 
 @media (max-width: 768px) {
     .contenedor-zapatillas {
@@ -205,7 +246,7 @@ footer {
     }
 
     .logo_titulo {
-        width: 40px;
+        width: 80px;
     }
 }
 
@@ -219,7 +260,7 @@ footer {
     }
 
     .logo_titulo {
-        width: 35px;
+        width: 60px;
     }
 
     .titulo_con_logo {

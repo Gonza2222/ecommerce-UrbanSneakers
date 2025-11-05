@@ -77,12 +77,18 @@ header a:hover {
     color: #ff6600;
 }
 
-/* Galería */
+/* Galería de carrito */
 .galeria-zapatillas {
     background: linear-gradient(to bottom, #1e1e1e, #dbd7d7);
     padding: 30px;
     text-align: center;
     color: #000;
+}
+
+#contenedor-carrito p {
+    text-align: center;
+    font-weight: bold;
+    color: #fcfcfc;
 }
 
 .galeria-zapatillas h2 {
@@ -91,7 +97,7 @@ header a:hover {
     color: #eee;
 }
 
-/* Contenedor de las cards */
+/* Contenedor de cards */
 .contenedor-zapatillas {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -183,6 +189,18 @@ header a:hover {
     background-color: #e65c00;
 }
 
+/* Total y resumen del carrito */
+.total-compra {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.total-compra button {
+    margin-top: 10px;
+}
+
 /* Footer */
 .footer-info {
     max-width: 1000px;
@@ -212,14 +230,6 @@ header a:hover {
 .footer-info a:hover {
     color: #ffa64d;
     text-decoration: underline;
-}
-
-.footer-info iframe {
-    border-radius: 8px;
-    width: 100%;
-    max-width: 600px;
-    height: 250px;
-    margin-top: 10px;
 }
 
 footer {

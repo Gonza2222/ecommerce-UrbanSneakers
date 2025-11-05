@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UrbanSneakers</title>
-    <link rel="stylesheet" href="../css/zapatillas_hombre.css">
+    <title>Carrito - UrbanSneakers</title>
+    <link rel="stylesheet" href="../css/carrito.css"> <!-- Reutilizamos el CSS de las cards -->
     <link rel="icon" type="image/png" href="../icons/sneakers.png">
 </head>
 <body>
@@ -12,27 +12,35 @@
         <img src="../img/logo/Logo.jpg" alt="Logo UrbanSneakers" class="logo_titulo">
         <h1 class="titulo_principal">UrbanSneakers</h1>
     </div>
+
     <header>
         <p>No tienes una cuenta aún? <a href="registro_usuarios.html">Regístrate</a></p>
         <a href="login_usuarios.html">Iniciar sesión</a>
     </header>
+
     <nav class="barra_navegacion">
         <a href="../../index.html"><span>Destacados</span></a>
         <a href="zapatillas_hombres.html"><span>Hombre</span></a>
         <a href="zapatillas_mujer.html"><span>Mujer</span></a>
         <a href="zapatillas_niños.html"><span>Niños</span></a>
         <a href="#" id="logoutBtn"><span>Cerrar sesión</span></a>
+        <a href="carrito.html"><span>Carrito</span></a>
     </nav>
+
     <section class="galeria-zapatillas">
-        <h2>Zapatillas Mujer</h2>
-        <div id="contenedor-mujer" class="contenedor-zapatillas"></div>
-    </section>  
-    <footer>    
+        <h2>Mi Carrito</h2>
+        <div id="contenedor-carrito" class="contenedor-zapatillas"></div>
+        <div class="total-compra">
+            <h3>Total: $<span id="total">0</span></h3>
+            <button id="vaciar-carrito" class="btn-agregar">Vaciar Carrito</button>
+        </div>
+    </section>
+
+    <footer>
+            <footer>    
             <div class="footer-info">
                 <h4>Sobre nosotros</h4>
                 <p>UrbanSneakers es tu tienda de confianza especializada en zapatillas urbanas, deportivas y de moda. Nos apasiona el estilo, la comodidad y la autenticidad en cada paso.</p>
-
-
                 <p>📍 Dirección: Calle San Martín 100, Córdoba, Argentina</p>
 
                 <p>📧 Email: 
@@ -61,10 +69,9 @@
                     </div>
             </div>
     </footer>
+    </footer>
     <script src="../js/logout.js"></script>
     <script src="../js/auth.js"></script>
-    <script src="../js/tienda.js"></script>
-    <script src="../js/productos.js"></script>
-    <script src="../js/renderProductos.js"></script>
+    <script src="../js/carrito.js"></script>
 </body>
 </html>
