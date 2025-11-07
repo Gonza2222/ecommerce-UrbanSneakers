@@ -107,7 +107,7 @@ header {
 
 /* Botón cerrar sesión */
 #header-logueado button#btn-cerrar-sesion {
-    background-color: #ff6600;
+    background-color: #111;
     color: #fff;
     border: none;
     padding: 8px 14px;
@@ -246,6 +246,7 @@ header {
     background-color: #e65c00;
 }
 
+
 .footer-info {
     max-width: 1000px;
     margin: 0 auto;
@@ -309,13 +310,13 @@ footer {
 }
 
 #contenedor-carrito{
-    font-size: 1em;
+    font-size: 0.5em;
     font-weight: bold;
-    color: #dfdddb;
+    color: #ff6600;
 }
 
 #logoutBtn {
-    background-color: #111;
+    background-color: #ff6600;
     color: #fff;
     border: none;
     padding: 8px 14px;
