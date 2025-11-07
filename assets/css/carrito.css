@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'Fuente-titulo';
     src: url('../fonts/RubikVinyl-Regular.ttf') format('truetype');
@@ -18,7 +19,7 @@ body {
     line-height: 1.6;
 }
 
-/* Contenedor del logo + título */
+
 .titulo_con_logo {
     display: flex;
     align-items: center;
@@ -40,22 +41,84 @@ body {
     margin: 0;
 }
 
+
 header {
-    text-align: center;
-    padding: 10px;
-    background-color: #eee;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-header p, header a {
+#main-header {
+    position: relative;
+    background-color: #eee;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+}
+
+
+#header-no-logueado p,
+#header-no-logueado a {
     font-weight: bold;
-    margin: 5px;
-    font-size: 1em;
     color: #333;
     text-decoration: none;
+    margin: 0 8px;
+    transition: opacity 0.3s ease;
 }
 
-header a:hover {
+#header-no-logueado a:hover {
     text-decoration: underline;
+}
+
+#header-logueado {
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+
+#header-logueado.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#header-logueado a#btn-carrito {
+    background-color: #ff6600;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+#header-logueado a#btn-carrito:hover {
+    background-color: #e65c00;
+}
+
+/* Botón cerrar sesión */
+#header-logueado button#btn-cerrar-sesion {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#header-logueado button#btn-cerrar-sesion:hover {
+    background-color: #333;
 }
 
 .barra_navegacion {
@@ -77,18 +140,12 @@ header a:hover {
     color: #ff6600;
 }
 
-/* Galería de carrito */
+
 .galeria-zapatillas {
     background: linear-gradient(to bottom, #1e1e1e, #dbd7d7);
     padding: 30px;
     text-align: center;
     color: #000;
-}
-
-#contenedor-carrito p {
-    text-align: center;
-    font-weight: bold;
-    color: #fcfcfc;
 }
 
 .galeria-zapatillas h2 {
@@ -107,7 +164,7 @@ header a:hover {
     padding: 0 20px;
 }
 
-/* Card individual */
+
 .card {
     background-color: #fff;
     border-radius: 8px;
@@ -189,19 +246,6 @@ header a:hover {
     background-color: #e65c00;
 }
 
-/* Total y resumen del carrito */
-.total-compra {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-.total-compra button {
-    margin-top: 10px;
-}
-
-/* Footer */
 .footer-info {
     max-width: 1000px;
     margin: 0 auto;
@@ -232,6 +276,14 @@ header a:hover {
     text-decoration: underline;
 }
 
+.footer-info iframe {
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    height: 250px;
+    margin-top: 10px;
+}
+
 footer {
     background-color: #111;
     color: #eee;
@@ -239,7 +291,44 @@ footer {
     text-align: center;
 }
 
-/* Responsive */
+.usuario-activo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    background-color: #eee;
+    font-weight: bold;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.usuario-activo span {
+    font-size: 1.1em;
+    color: #333;
+}
+
+#contenedor-carrito{
+    font-size: 1em;
+    font-weight: bold;
+    color: #dfdddb;
+}
+
+#logoutBtn {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#logoutBtn:hover {
+    background-color: #333;
+}
+
 @media (max-width: 1024px) {
     .contenedor-zapatillas {
         grid-template-columns: repeat(3, 1fr);
@@ -276,5 +365,11 @@ footer {
     .titulo_con_logo {
         flex-direction: column;
         gap: 10px;
+    }
+
+    #header-logueado {
+        position: static;
+        justify-content: center;
+        margin-top: 10px;
     }
 }

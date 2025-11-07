@@ -38,10 +38,12 @@ function renderProductos(lista, contenedorId) {
         });
     });
 
-    // Botón agregar al carrito
     document.querySelectorAll(".btn-agregar").forEach(btn => {
         btn.addEventListener("click", () => {
-            agregarAlCarrito(prod); // llama a la función del carrito.js
+            const id = parseInt(btn.getAttribute("data-id"));
+            const producto = lista.find(p => p.id === id);
+            const cantidad = parseInt(document.getElementById(`cantidad-${id}`).textContent);
+            agregarAlCarrito(producto, cantidad); // pasás el producto y la cantidad
         });
     });
 }

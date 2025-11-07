@@ -12,26 +12,29 @@
         <img src="../img/logo/Logo.jpg" alt="Logo UrbanSneakers" class="logo_titulo">
         <h1 class="titulo_principal">UrbanSneakers</h1>
     </div>
+    <header id="main-header">
+        <div id="header-no-logueado">
+            <p>No tienes una cuenta aún? <a href="assets/pages/registro_usuarios.html">Regístrate</a></p>
+            <a href="login_usuarios.html">Iniciar sesión</a>
+        </div>
 
-    <header>
-        <p>No tienes una cuenta aún? <a href="registro_usuarios.html">Regístrate</a></p>
-        <a href="login_usuarios.html">Iniciar sesión</a>
+        <div id="header-logueado" style="display: none;">
+            <a href="carrito.html" id="btn-carrito">🛒 Carrito</a>
+            <button id="btn-cerrar-sesion">Cerrar sesión</button>
+        </div>
     </header>
-
     <nav class="barra_navegacion">
         <a href="../../index.html"><span>Destacados</span></a>
         <a href="zapatillas_hombres.html"><span>Hombre</span></a>
         <a href="zapatillas_mujer.html"><span>Mujer</span></a>
         <a href="zapatillas_niños.html"><span>Niños</span></a>
-        <a href="#" id="logoutBtn"><span>Cerrar sesión</span></a>
-        <a href="carrito.html"><span>Carrito</span></a>
     </nav>
 
     <section class="galeria-zapatillas">
         <h2>Mi Carrito</h2>
         <div id="contenedor-carrito" class="contenedor-zapatillas"></div>
         <div class="total-compra">
-            <h3>Total: $<span id="total">0</span></h3>
+            <h3>Total: <span id="total">0</span></h3>
             <button id="vaciar-carrito" class="btn-agregar">Vaciar Carrito</button>
         </div>
     </section>

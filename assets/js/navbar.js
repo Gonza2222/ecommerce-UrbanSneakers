@@ -1,4 +1,9 @@
 function renderNavbar() {
+  if (!Array.isArray(rutas)) {
+    console.error("El array 'rutas' no está definido.");
+    return;
+  }
+
   const menu = rutas.map(r => `<a href="${r.url}"><span>${r.titulo}</span></a>`).join("");
 
   document.getElementById("navbar").innerHTML = `
@@ -10,6 +15,7 @@ function renderNavbar() {
 
   document.getElementById("logoutBtn").addEventListener("click", () => {
     localStorage.removeItem("usuarioLogueado");
-    window.location.href = "./login.html";
+    alert("Sesión cerrada ✅");
+    window.location.href = "/assets/pages/login_usuarios.html";
   });
 }

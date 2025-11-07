@@ -7,9 +7,9 @@ function renderCarrito() {
     const totalSpan = document.getElementById("total");
     contenedor.innerHTML = "";
 
-    if(carrito.length === 0){
+    if (carrito.length === 0) {
         contenedor.innerHTML = "<p>Tu carrito está vacío.</p>";
-        totalSpan.textContent = "0";
+        totalSpan.textContent = "$0";
         return;
     }
 
@@ -28,37 +28,47 @@ function renderCarrito() {
                 <span id="cantidad-${prod.id}">${prod.cantidad}</span>
                 <button class="cantidad-btn" data-id="${prod.id}" data-accion="sumar">+</button>
             </div>
+            <button class="eliminar-btn" data-id="${prod.id}">🗑️ Eliminar</button>
         `;
         contenedor.appendChild(card);
     });
 
-    totalSpan.textContent = total.toLocaleString();
-
-    // Eventos botones + y -
-    document.querySelectorAll(".cantidad-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const id = parseInt(btn.dataset.id);
-            const accion = btn.dataset.accion;
-
-            carrito = carrito.map(p => {
-                if(p.id === id){
-                    if(accion === "sumar") p.cantidad++;
-                    if(accion === "restar" && p.cantidad > 1) p.cantidad--;
-                }
-                return p;
-            });
-
-            localStorage.setItem("carrito", JSON.stringify(carrito));
-            renderCarrito();
-        });
-    });
+    totalSpan.textContent = `$${total.toLocaleString()}`;
 }
 
-// Vaciar carrito
+// Delegación de eventos para botones +, –, eliminar
+document.getElementById("contenedor-carrito").addEventListener("click", (e) => {
+    const id = parseInt(e.target.dataset.id);
+
+    if (e.target.classList.contains("cantidad-btn")) {
+        const accion = e.target.dataset.accion;
+
+        carrito = carrito.map(p => {
+            if (p.id === id) {
+                if (accion === "sumar") p.cantidad++;
+                if (accion === "restar" && p.cantidad > 1) p.cantidad--;
+            }
+            return p;
+        });
+
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        renderCarrito();
+    }
+
+    if (e.target.classList.contains("eliminar-btn")) {
+        carrito = carrito.filter(p => p.id !== id);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        renderCarrito();
+    }
+});
+
+// Vaciar carrito con confirmación
 document.getElementById("vaciar-carrito").addEventListener("click", () => {
-    carrito = [];
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    renderCarrito();
+    if (confirm("¿Estás seguro de que querés vaciar el carrito?")) {
+        carrito = [];
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        renderCarrito();
+    }
 });
 
 // Renderizar al cargar

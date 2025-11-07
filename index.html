@@ -12,16 +12,22 @@
         <img src="assets/img/logo/Logo.jpg" alt="Logo UrbanSneakers" class="logo_titulo">
         <h1 class="titulo_principal">UrbanSneakers</h1>
     </div>
-    <header>
-        <p>No tienes una cuenta aún? <a href="assets/pages/registro_usuarios.html">Regístrate</a></p>
-        <a href="assets/pages/login_usuarios.html">Iniciar sesión</a>
+    <header id="main-header">
+        <div id="header-no-logueado">
+            <p>No tienes una cuenta aún? <a href="assets/pages/registro_usuarios.html">Regístrate</a></p>
+            <a href="assets/pages/login_usuarios.html">Iniciar sesión</a>
+        </div>
+
+        <div id="header-logueado" style="display: none;">
+            <a href="assets/pages/carrito.html" id="btn-carrito">🛒 Carrito</a>
+            <button id="btn-cerrar-sesion">Cerrar sesión</button>
+        </div>
     </header>
     <nav class="barra_navegacion">
         <a href="index.html"><span>Destacados</span></a>
         <a href="assets/pages/zapatillas_hombres.html"><span>Hombre</span></a>
         <a href="assets/pages/zapatillas_mujer.html"><span>Mujer</span></a>
         <a href="assets/pages/zapatillas_niños.html"><span>Niños</span></a>
-        <a href="#" id="logoutBtn"><span>Cerrar sesión</span></a>
     </nav>
     <section class="galeria-zapatillas">
         <h2>Zapatillas destacadas</h2>
@@ -64,6 +70,7 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/productos.js"></script>
     <script src="assets/js/renderProductos.js"></script>
+    <script src="assets/js/sesion.js"></script>
 </body>
 </html>
 
