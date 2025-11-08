@@ -2,20 +2,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
     const header = document.querySelector("header");
 
+    // Detectar si estamos en una subcarpeta
+    const basePath = window.location.pathname.includes("/pages/") ? "../../" : "";
+
     // Renderizar header según sesión
     if (usuario) {
         header.innerHTML = `
             <div class="usuario-activo">
                 <span>Bienvenido 👋 ${usuario.nombre}</span>
-                <a href="/assets/pages/carrito.html" id="carritoLink">🛒 Carrito</a>
+                <a href="${basePath}assets/pages/carrito.html" id="carritoLink">🛒 Carrito</a>
                 <button id="logoutBtn">Cerrar sesión</button>
             </div>
         `;
     } else {
         header.innerHTML = `
             <div id="header-no-logueado">
-                <p>No tienes una cuenta aún? <a href="/assets/pages/registro_usuarios.html">Regístrate</a></p>
-                <a href="/assets/pages/login_usuarios.html">Iniciar sesión</a>
+                <p>No tienes una cuenta aún? <a href="${basePath}assets/pages/registro_usuarios.html">Regístrate</a></p>
+                <a href="${basePath}assets/pages/login_usuarios.html">Iniciar sesión</a>
             </div>
         `;
     }
@@ -27,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!usuario && requiereLogin) {
         alert("Debes iniciar sesión para acceder a esta página.");
-        window.location.href = "/assets/pages/login_usuarios.html";
+        window.location.href = `${basePath}assets/pages/login_usuarios.html`;
     }
 
     // Logout
@@ -35,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target.id === "logoutBtn") {
             localStorage.removeItem("usuarioLogueado");
             alert("Sesión cerrada ✅");
-            window.location.href = "/assets/pages/login_usuarios.html";
+            window.location.href = `${basePath}assets/pages/login_usuarios.html`;
         }
     });
 
@@ -43,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("storage", (event) => {
         if (event.key === "usuarioLogueado" && event.newValue === null) {
             alert("Tu sesión fue cerrada desde otra pestaña.");
-            window.location.href = "/assets/pages/login_usuarios.html";
+            window.location.href = `${basePath}assets/pages/login_usuarios.html`;
         }
     });
 });

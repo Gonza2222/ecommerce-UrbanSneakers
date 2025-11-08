@@ -16,15 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const usuario = {
                 nombre: "Test User",
                 correo: correo,
-                rol: "cliente" // opcional, útil si querés roles más adelante
+                rol: "cliente"
             };
 
             localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
 
             alert("Inicio de sesión exitoso ✅");
 
-            // Redirige a la página principal con ruta absoluta
-            window.location.href = "/index.html";
+            // Detectar si estamos en subcarpeta
+            const basePath = window.location.pathname.includes("/pages/") ? "../../" : "";
+
+            // Redirige a la página principal con ruta relativa
+            window.location.href = `${basePath}index.html`;
         } else {
             alert("Usuario o contraseña incorrectos ❌");
         }

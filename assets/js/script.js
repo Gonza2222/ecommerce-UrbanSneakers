@@ -5,7 +5,12 @@ document.addEventListener("click", (e) => {
 
     if (!logueado) {
       alert("Debes iniciar sesión para comprar 🛒");
-      window.location.href = "./assets/pages/login_usuarios.html";
+
+      // Detectar si estamos en subcarpeta
+      const basePath = window.location.pathname.includes("/pages/") ? "../../" : "";
+
+      // Redirigir al login con ruta relativa
+      window.location.href = `${basePath}assets/pages/login_usuarios.html`;
       return;
     }
 

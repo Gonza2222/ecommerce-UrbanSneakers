@@ -6,12 +6,11 @@ document.addEventListener("click", (e) => {
     if (!logueado) {
       alert("Debes iniciar sesión para comprar 🛒");
 
-      // Detectamos si estamos dentro de "assets/pages"
-      const rutaLogin = window.location.pathname.includes("/assets/pages/")
-        ? "../pages/login_usuarios.html"
-        : "./assets/pages/login_usuarios.html";
+      // Detectar si estamos en una subcarpeta
+      const basePath = window.location.pathname.includes("/pages/") ? "../../" : "";
 
-      window.location.href = rutaLogin;
+      // Redirigir al login con ruta relativa
+      window.location.href = `${basePath}assets/pages/login_usuarios.html`;
       return;
     }
 
