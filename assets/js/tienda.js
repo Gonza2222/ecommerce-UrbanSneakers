@@ -7,9 +7,9 @@ document.addEventListener("click", (e) => {
       alert("Debes iniciar sesión para comprar 🛒");
 
       // Detectamos si estamos dentro de "assets/pages"
-      const rutaLogin = window.location.pathname.includes("/assets/pages/")
+      const rutaLogin = window.location.pathname.includes("assets/pages/")
         ? "../pages/login_usuarios.html"
-        : "./assets/pages/login_usuarios.html";
+        : "assets/pages/login_usuarios.html";
 
       window.location.href = rutaLogin;
       return;

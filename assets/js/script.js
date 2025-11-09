@@ -5,7 +5,9 @@ document.addEventListener("click", (e) => {
 
     if (!logueado) {
       alert("Debes iniciar sesión para comprar 🛒");
-      window.location.href = "./assets/pages/login_usuarios.html";
+      
+      // CORRECTO - desde páginas en assets/pages/
+      window.location.href = "login_usuarios.html";
       return;
     }
 

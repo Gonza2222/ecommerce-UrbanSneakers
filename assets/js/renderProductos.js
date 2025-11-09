@@ -1,4 +1,4 @@
-// Detecta si el HTML está dentro de "pages" y ajusta la ruta
+
 const basePath = window.location.pathname.includes("/pages/") ? "../../" : "";
 
 function renderProductos(lista, contenedorId) {
