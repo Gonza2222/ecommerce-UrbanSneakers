@@ -1,3 +1,4 @@
+
 const productos = [
   // HOMBRE
   { id: 1, nombre: "Nike Urban White", precio: 250000, img: "assets/img/hombres/4.webp", categoria: "hombre" },

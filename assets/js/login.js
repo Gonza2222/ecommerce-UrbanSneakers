@@ -1,35 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
+document.querySelector("form").addEventListener("submit", (e) => {
+  e.preventDefault(); // Evita que recargue la página
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault(); // evita que recargue la página
+  const email = document.getElementById("correo").value.trim();
+  const password = document.getElementById("contrasena").value.trim();
 
-        const correo = document.getElementById("correo").value.trim();
-        const contrasena = document.getElementById("contrasena").value.trim();
-
-        // Validación simple (usuario de prueba)
-        const usuarioValido = "test@correo.com";
-        const passValida = "1234";
-
-        if (correo === usuarioValido && contrasena === passValida) {
-            // Guardar sesión en localStorage
-            const usuario = {
-                nombre: "Test User",
-                correo: correo,
-                rol: "cliente"
-            };
-
-            localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
-
-            alert("Inicio de sesión exitoso ✅");
-
-            // Detectar si estamos en subcarpeta
-            const basePath = window.location.pathname.includes("/pages/") ? "../../" : "";
-
-            // Redirige a la página principal con ruta relativa
-            window.location.href = `${basePath}index.html`;
-        } else {
-            alert("Usuario o contraseña incorrectos ❌");
-        }
-    });
+  // Simulación de login básico
+  if (email !== "" && password !== "") {
+    alert("Inicio de sesión exitoso ✅");
+    // Redirige a home o index
+    window.location.href = "../../index.html";
+  } else {
+    alert("Por favor, completa todos los campos ❌");
+  }
 });

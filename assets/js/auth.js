@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     header.innerHTML = `
       <div class="usuario-activo">
         <span>Bienvenido 👋 ${usuario.nombre}</span>
-        <a href="${basePath}assets/pages/carrito.html" id="carritoLink">🛒 Carrito</a>
+        <a href="carrito.html" id="carritoLink">🛒 Carrito</a>
         <button id="logoutBtn">Cerrar sesión</button>
       </div>
     `;
@@ -17,13 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("logoutBtn").addEventListener("click", () => {
       localStorage.removeItem("usuarioLogueado");
       alert("Sesión cerrada ✅");
-      window.location.href = `${basePath}assets/pages/login_usuarios.html`;
+      window.location.href = "login_usuarios.html";
     });
   } else {
     header.innerHTML = `
       <div id="header-no-logueado">
-        <p>No tienes una cuenta aún? <a href="${basePath}assets/pages/registro_usuarios.html">Regístrate</a></p>
-        <a href="${basePath}assets/pages/login_usuarios.html">Iniciar sesión</a>
+        <p>No tienes una cuenta aún? <a href="registro_usuarios.html">Regístrate</a></p>
+        <a href="login_usuarios.html">Iniciar sesión</a>
       </div>
     `;
   }
