@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito - UrbanSneakers</title>
-    <link rel="stylesheet" href="../css/carrito.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" type="image/png" href="../icons/sneakers.png">
 </head>
 <body>
@@ -14,30 +14,27 @@
     </div>
 
     <header id="main-header">
+        <!-- Bloque para usuarios no logueados -->
         <div id="header-no-logueado">
-            <p>No tienes una cuenta aún? <a href="registro_usuarios.html">Regístrate</a></p>
+            <p>¿No tienes una cuenta aún? <a href="registro_usuarios.html">Regístrate</a></p>
             <a href="login_usuarios.html">Iniciar sesión</a>
         </div>
 
+        <!-- Bloque para usuarios logueados -->
         <div id="header-logueado" style="display: none;">
             <a href="carrito.html" id="btn-carrito">🛒 Carrito</a>
             <button id="btn-cerrar-sesion">Cerrar sesión</button>
         </div>
     </header>
 
-    <nav class="barra_navegacion">
-        <a href="../../index.html"><span>Destacados</span></a>
-        <a href="zapatillas_hombres.html"><span>Hombre</span></a>
-        <a href="zapatillas_mujer.html"><span>Mujer</span></a>
-        <a href="zapatillas_niños.html"><span>Niños</span></a>
-    </nav>
+    <div id="navbar"></div>
 
     <section class="galeria-zapatillas">
         <h2>Mi Carrito</h2>
         <div id="contenedor-carrito" class="contenedor-zapatillas"></div>
         <div class="total-compra">
             <h3>Total: <span id="total">0</span></h3>
-            <button id="vaciar-carrito" class="btn-agregar">Vaciar Carrito</button>
+            <button id="vaciar-carrito" class="btn-carrito">Vaciar Carrito</button>
         </div>
     </section>
 
@@ -73,10 +70,8 @@
             </div>
         </div>
     </footer>
-
-    <!-- Scripts (en orden correcto) -->
-    <script src="../js/auth.js"></script>
-    <script src="../js/logout.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/sesion.js"></script>
     <script src="../js/carrito.js"></script>
 </body>
 </html>

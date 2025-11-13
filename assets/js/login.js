@@ -1,15 +1,25 @@
 document.querySelector("form").addEventListener("submit", (e) => {
-  e.preventDefault(); // Evita que recargue la página
+  e.preventDefault();
 
   const email = document.getElementById("correo").value.trim();
   const password = document.getElementById("contrasena").value.trim();
 
-  // Simulación de login básico
   if (email !== "" && password !== "") {
+    const usuario = {
+      nombre: email.split("@")[0],
+      email: email
+    };
+
+    localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
     alert("Inicio de sesión exitoso ✅");
-    // Redirige a home o index
-    window.location.href = "../../index.html";
+
+    const basePath = window.location.pathname.includes("/assets/pages/")
+      ? "../../"
+      : "./";
+
+    window.location.href = `${basePath}index.html`;
   } else {
     alert("Por favor, completa todos los campos ❌");
   }
 });
+

@@ -1,31 +1,25 @@
-function renderNavbar() {
-  if (!Array.isArray(rutas)) {
-    console.error("El array 'rutas' no está definido.");
-    return;
-  }
+const navbar = document.getElementById("navbar");
 
-  const menu = rutas
-    .map(r => `<a href="${r.url}"><span>${r.titulo}</span></a>`)
-    .join("");
+// Definimos los links del navbar
+const links = [
+    { texto: "Destacados", url: "../../index.html" },
+    { texto: "Hombre", url: "zapatillas_hombre.html" },
+    { texto: "Mujer", url: "zapatillas_mujer.html" },
+    { texto: "Niños", url: "zapatillas_ninos.html" }
+];
 
-  const navbar = document.getElementById("navbar");
+// Creamos el <nav> y lo llenamos con los links
+const nav = document.createElement("nav");
+nav.classList.add("barra_navegacion");
 
-  if (!navbar) {
-    console.error("No se encontró el elemento con id='navbar'.");
-    return;
-  }
+links.forEach(link => {
+    const a = document.createElement("a");
+    a.href = link.url;
+    const span = document.createElement("span");
+    span.textContent = link.texto;
+    a.appendChild(span);
+    nav.appendChild(a);
+});
 
-  navbar.innerHTML = `
-    <nav class="barra_navegacion">
-      ${menu}
-      <button id="logoutBtn" style="margin-left:auto;">Cerrar sesión</button>
-    </nav>
-  `;
-
-  document.getElementById("logoutBtn").addEventListener("click", () => {
-    localStorage.removeItem("usuarioLogueado");
-    alert("Sesión cerrada ✅");
-
-    window.location.href = "./assets/pages/login_usuarios.html";
-  });
-}
+// Insertamos el navbar en el div
+navbar.appendChild(nav);

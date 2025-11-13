@@ -8,17 +8,20 @@
     <link rel="icon" type="image/png" href="assets/icons/sneakers.png">
 </head>
 <body>
+
     <div class="titulo_con_logo">
         <img src="assets/img/logo/Logo.jpg" alt="Logo UrbanSneakers" class="logo_titulo">
         <h1 class="titulo_principal">UrbanSneakers</h1>
     </div>
 
     <header id="main-header">
+         <!-- Bloque para usuarios no logueados -->
         <div id="header-no-logueado">
-            <p>No tienes una cuenta aún? <a href="assets/pages/registro_usuarios.html">Regístrate</a></p>
+            <p>¿No tienes una cuenta aún? <a href="assets/pages/registro_usuarios.html">Regístrate</a></p>
             <a href="assets/pages/login_usuarios.html">Iniciar sesión</a>
         </div>
 
+        <!-- Bloque para usuarios logueados -->
         <div id="header-logueado" style="display: none;">
             <a href="assets/pages/carrito.html" id="btn-carrito">🛒 Carrito</a>
             <button id="btn-cerrar-sesion">Cerrar sesión</button>
@@ -27,16 +30,15 @@
 
     <nav class="barra_navegacion">
         <a href="index.html"><span>Destacados</span></a>
-        <a href="assets/pages/zapatillas_hombres.html"><span>Hombre</span></a>
+        <a href="assets/pages/zapatillas_hombre.html"><span>Hombre</span></a>
         <a href="assets/pages/zapatillas_mujer.html"><span>Mujer</span></a>
-        <a href="assets/pages/zapatillas_niños.html"><span>Niños</span></a>
+        <a href="assets/pages/zapatillas_ninos.html"><span>Niños</span></a>
     </nav>
 
     <section class="galeria-zapatillas">
         <h2>Zapatillas Destacadas</h2>
         <div id="contenedor-destacados" class="contenedor-zapatillas"></div>
     </section>
-
     <footer>
         <div class="footer-info">
             <h4>Sobre nosotros</h4>
@@ -69,12 +71,8 @@
             </div>
         </div>
     </footer>
-    <script src="assets/js/logout.js"></script>
-    <script src="assets/js/auth.js"></script>
-    <script src="assets/js/tienda.js"></script>
-    <script src="assets/js/productos.js"></script>
-    <script src="assets/js/renderProductos.js"></script>
     <script src="assets/js/sesion.js"></script>
+    <script src="assets/js/productos.js"></script>
 </body>
 </html>
 

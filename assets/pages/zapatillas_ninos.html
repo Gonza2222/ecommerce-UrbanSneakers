@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UrbanSneakers - Zapatillas Hombre</title>
-    <meta name="description" content="UrbanSneakers - Zapatillas urbanas y deportivas para hombre, mujer y niños. Estilo, comodidad y autenticidad.">
-    <link rel="stylesheet" href="../css/zapatillas_hombre.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" type="image/png" href="../icons/sneakers.png">
 </head>
 <body>
@@ -14,28 +13,25 @@
         <h1 class="titulo_principal">UrbanSneakers</h1>
     </div>
 
+   
     <header id="main-header">
+    <!-- Bloque para usuarios no logueados -->
         <div id="header-no-logueado">
             <p>¿No tienes una cuenta aún? <a href="registro_usuarios.html">Regístrate</a></p>
             <a href="login_usuarios.html">Iniciar sesión</a>
         </div>
 
+    <!-- Bloque para usuarios logueados -->
         <div id="header-logueado" style="display: none;">
             <a href="carrito.html" id="btn-carrito">🛒 Carrito</a>
             <button id="btn-cerrar-sesion">Cerrar sesión</button>
         </div>
     </header>
-
-    <nav class="barra_navegacion">
-        <a href="../../index.html"><span>Destacados</span></a>
-        <a href="zapatillas_hombres.html"><span>Hombre</span></a>
-        <a href="zapatillas_mujer.html"><span>Mujer</span></a>
-        <a href="zapatillas_niños.html"><span>Niños</span></a>
-    </nav>
+    <div id="navbar"></div>
 
     <section class="galeria-zapatillas">
-        <h2>Zapatillas Hombre</h2>
-        <div id="contenedor-hombre" class="contenedor-zapatillas"></div>
+        <h2>Zapatillas Niños</h2>
+        <div id="contenedor-nino" class="contenedor-zapatillas" data-categoria="niños"></div>
     </section>  
 
     <footer>    
@@ -45,13 +41,13 @@
             <p>📍 Dirección: Calle San Martín 100, Córdoba, Argentina</p>
 
             <p>📧 Email: 
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@urbansneakers.com&su=Consulta%20desde%20la%20web&body=Hola%2C%20quiero%20hacer%20una%20consulta" target="_blank">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto@urbansneakers.com" target="_blank">
                     contacto@urbansneakers.com
                 </a>
             </p>
 
             <p>📞 Teléfono: 
-                <a href="https://wa.me/5493514567890?text=Hola%20UrbanSneakers%2C%20quiero%20hacer%20una%20consulta" target="_blank">
+                <a href="https://wa.me/5493514567890" target="_blank">
                     +54 351 456-7890 (WhatsApp)
                 </a>
             </p>
@@ -68,13 +64,11 @@
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
+
         </div>
     </footer>
-    <script src="../js/auth.js"></script>
     <script src="../js/sesion.js"></script>
-    <script src="../js/logout.js"></script>
-    <script src="../js/productos.js"></script>
-    <script src="../js/renderProductos.js"></script>
-    <script src="../js/tienda.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/productosNinios.js"></script>
 </body>
 </html>
