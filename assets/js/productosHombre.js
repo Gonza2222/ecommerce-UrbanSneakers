@@ -1,12 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   const contenedor = document.getElementById("contenedor-hombre");
 
-  if (!contenedor) return; // Si no existe el contenedor, no hace nada
+  if (!contenedor) return;
 
-  fetch("../data/productos.json")
+  // RUTA DINÁMICA PARA EL JSON
+  const jsonPath = window.location.pathname.includes("/assets/pages/")
+    ? "../data/productos.json"
+    : "assets/data/productos.json";
+
+  // Recuperar carrito
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  fetch(jsonPath)
     .then(res => res.json())
     .then(data => {
-      // Buscamos la categoría "hombre"
       const categoriaHombre = data.categorias.find(c => c.nombre === "hombre");
 
       if (categoriaHombre && categoriaHombre.productos.length > 0) {
@@ -32,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
           contenedor.appendChild(card);
         });
 
-        // Funcionalidad + y -
+        // + y -
         contenedor.addEventListener("click", (e) => {
           if (e.target.classList.contains("btn-sumar")) {
             const cantidad = e.target.parentElement.querySelector(".cantidad");
@@ -44,7 +51,47 @@ document.addEventListener("DOMContentLoaded", () => {
             const valorActual = parseInt(cantidad.textContent);
             if (valorActual > 1) cantidad.textContent = valorActual - 1;
           }
+
+          // === BOTÓN DE AGREGAR AL CARRITO ===
+          if (e.target.classList.contains("btn-carrito")) {
+            const usuarioLogueado = sessionStorage.getItem("usuarioLogueado");
+
+            // Si NO está logueado → lo mando al login
+            if (!usuarioLogueado) {
+              alert("Debes iniciar sesión para agregar productos al carrito ❌");
+
+              const basePath = window.location.pathname.includes("/assets/pages/")
+                ? "./"
+                : "assets/pages/";
+
+              window.location.href = `${basePath}login_usuarios.html`;
+              return;
+            }
+
+            // Tomar datos del producto
+            const card = e.target.closest(".card-producto");
+            const nombre = card.querySelector("h3").textContent;
+            const precio = parseInt(
+              card.querySelector(".precio").textContent.replace("$", "").replace(/\./g, "")
+            );
+            const img = card.querySelector("img").src;
+            const cantidad = parseInt(card.querySelector(".cantidad").textContent);
+
+            const nuevoProducto = {
+              id: Date.now(),
+              nombre,
+              precio,
+              img,
+              cantidad
+            };
+
+            carrito.push(nuevoProducto);
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+
+            alert("Producto agregado al carrito 🛒✨");
+          }
         });
+
       } else {
         contenedor.innerHTML = "<p>No hay productos disponibles para Hombre.</p>";
       }

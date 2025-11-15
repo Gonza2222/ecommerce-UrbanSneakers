@@ -21,19 +21,26 @@ document.addEventListener("DOMContentLoaded", () => {
     let total = 0;
 
     carrito.forEach(prod => {
-      total += prod.precio * prod.cantidad;
+      // DETECTAR EL TIPO DE PRODUCTO Y USAR PROPIEDADES CORRECTAS
+      const titulo = prod.titulo || prod.nombre || "Producto sin nombre";
+      const imagen = prod.imagen || prod.img || "";
+      const precio = prod.precio || 0;
+      const cantidad = prod.cantidad || 1;
+      
+      total += precio * cantidad;
+      
       const card = document.createElement("div");
-      card.className = "card";
+      card.className = "item-carrito"; 
       card.innerHTML = `
-        <img src="${prod.img}" alt="${prod.nombre}">
-        <h3>${prod.nombre}</h3>
-        <p>$${prod.precio.toLocaleString()}</p>
-        <div class="cantidad-control">
-            <button class="cantidad-btn" data-id="${prod.id}" data-accion="restar">-</button>
-            <span id="cantidad-${prod.id}">${prod.cantidad}</span>
-            <button class="cantidad-btn" data-id="${prod.id}" data-accion="sumar">+</button>
+        <img src="${imagen}" alt="${titulo}" class="img-producto">
+        <h3>${titulo}</h3>
+        <p class="precio">$${precio.toLocaleString()}</p>
+        <div class="controles-cantidad">
+            <button class="cantidad-btn" data-titulo="${titulo}" data-accion="restar">-</button>
+            <span class="cantidad">${cantidad}</span>
+            <button class="cantidad-btn" data-titulo="${titulo}" data-accion="sumar">+</button>
         </div>
-        <button class="eliminar-btn" data-id="${prod.id}">🗑️ Eliminar</button>
+        <button class="btn-eliminar" data-titulo="${titulo}">🗑️ Eliminar</button>
       `;
       contenedor.appendChild(card);
     });
@@ -43,13 +50,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Delegación de eventos para botones +, –, eliminar
   contenedor.addEventListener("click", (e) => {
-    const id = parseInt(e.target.dataset.id);
+    const titulo = e.target.dataset.titulo;
 
     if (e.target.classList.contains("cantidad-btn")) {
       const accion = e.target.dataset.accion;
 
       carrito = carrito.map(p => {
-        if (p.id === id) {
+        // COMPARAR CON AMBAS PROPIEDADES POSIBLES
+        const prodTitulo = p.titulo || p.nombre;
+        if (prodTitulo === titulo) {
           if (accion === "sumar") p.cantidad++;
           if (accion === "restar" && p.cantidad > 1) p.cantidad--;
         }
@@ -60,8 +69,11 @@ document.addEventListener("DOMContentLoaded", () => {
       renderCarrito();
     }
 
-    if (e.target.classList.contains("eliminar-btn")) {
-      carrito = carrito.filter(p => p.id !== id);
+    if (e.target.classList.contains("btn-eliminar")) { // CLASE CORRECTA
+      carrito = carrito.filter(p => {
+        const prodTitulo = p.titulo || p.nombre;
+        return prodTitulo !== titulo;
+      });
       localStorage.setItem("carrito", JSON.stringify(carrito));
       renderCarrito();
     }

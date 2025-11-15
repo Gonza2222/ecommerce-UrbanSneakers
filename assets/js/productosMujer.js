@@ -1,13 +1,19 @@
-// productosMujeres.js
 document.addEventListener("DOMContentLoaded", () => {
   const contenedor = document.getElementById("contenedor-mujer");
 
   if (!contenedor) return;
 
-  fetch("../data/productos.json")
+  // Ruta dinámica del JSON
+  const jsonPath = window.location.pathname.includes("/assets/pages/")
+    ? "../data/productos.json"
+    : "assets/data/productos.json";
+
+  // Recuperar carrito
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  fetch(jsonPath)
     .then(res => res.json())
     .then(data => {
-      // Buscamos la categoría "mujer"
       const categoriaMujer = data.categorias.find(c => c.nombre === "mujer");
 
       if (categoriaMujer && categoriaMujer.productos.length > 0) {
@@ -33,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
           contenedor.appendChild(card);
         });
 
-        // ---- funcionalidad de los botones + y - ----
+        // --- Botones + y - ---
         contenedor.addEventListener("click", (e) => {
           if (e.target.classList.contains("btn-sumar")) {
             const cantidad = e.target.parentElement.querySelector(".cantidad");
@@ -44,6 +50,45 @@ document.addEventListener("DOMContentLoaded", () => {
             const cantidad = e.target.parentElement.querySelector(".cantidad");
             const valorActual = parseInt(cantidad.textContent);
             if (valorActual > 1) cantidad.textContent = valorActual - 1;
+          }
+
+          // --- Botón Agregar al carrito ---
+          if (e.target.classList.contains("btn-carrito")) {
+            const usuarioLogueado = sessionStorage.getItem("usuarioLogueado");
+
+            // Si NO está logueado → lo mando al login
+            if (!usuarioLogueado) {
+              alert("Debes iniciar sesión para agregar productos al carrito ❌");
+
+              const basePath = window.location.pathname.includes("/assets/pages/")
+                ? "./"
+                : "assets/pages/";
+
+              window.location.href = `${basePath}login_usuarios.html`;
+              return;
+            }
+
+            // Obtener datos del producto desde la card
+            const card = e.target.closest(".card-producto");
+            const nombre = card.querySelector("h3").textContent;
+            const precio = parseInt(
+              card.querySelector(".precio").textContent.replace("$", "").replace(/\./g, "")
+            );
+            const img = card.querySelector("img").src;
+            const cantidad = parseInt(card.querySelector(".cantidad").textContent);
+
+            const nuevoProducto = {
+              id: Date.now(),
+              nombre,
+              precio,
+              img,
+              cantidad
+            };
+
+            carrito.push(nuevoProducto);
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+
+            alert("Producto agregado al carrito 🛒✨");
           }
         });
 

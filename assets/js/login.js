@@ -10,7 +10,8 @@ document.querySelector("form").addEventListener("submit", (e) => {
       email: email
     };
 
-    localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
+    sessionStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
+
     alert("Inicio de sesión exitoso ✅");
 
     const basePath = window.location.pathname.includes("/assets/pages/")

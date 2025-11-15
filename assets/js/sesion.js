@@ -1,13 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("main-header");
-  const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
-  const basePath = window.location.pathname.endsWith("index.html") || window.location.pathname === "/"
-    ? "assets/pages/"
-    : "./";
+  const usuario = JSON.parse(sessionStorage.getItem("usuarioLogueado"));
+
+  const basePath =
+    window.location.pathname.endsWith("index.html") ||
+    window.location.pathname === "/"
+      ? "assets/pages/"
+      : "./";
 
   if (usuario) {
-    // Mostrar el menú de usuario logueado
+    // Mostrar menú de usuario logueado
     header.innerHTML = `
       <div class="usuario-activo">
         <span>Bienvenido 👋 ${usuario.nombre}</span>
@@ -16,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
   } else {
-    // Mostrar el menú de usuario no logueado
+    //Mostrar menú para usuarios no logueados
     header.innerHTML = `
       <div id="header-no-logueado">
         <p>¿No tienes una cuenta aún? 
@@ -27,15 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-  // Lógica de cerrar sesión
   document.addEventListener("click", (e) => {
     if (e.target.id === "logoutBtn") {
-      localStorage.removeItem("usuarioLogueado");
+      sessionStorage.removeItem("usuarioLogueado");
       alert("Sesión cerrada ✅");
       window.location.href = `${basePath}login_usuarios.html`;
     }
   });
 });
+
 
 
 

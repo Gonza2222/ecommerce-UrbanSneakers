@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
             contenedor.appendChild(card);
           });
 
-          // Funcionalidad de los botones + y -
+          // Funcionalidad + y -
           contenedor.addEventListener("click", (e) => {
             if (e.target.classList.contains("btn-sumar")) {
               const cantidad = e.target.parentElement.querySelector(".cantidad");
@@ -53,6 +53,45 @@ document.addEventListener("DOMContentLoaded", () => {
               if (valorActual > 1) cantidad.textContent = valorActual - 1;
             }
           });
+
+          // Funcionalidad de AÑADIR AL CARRITO
+          contenedor.addEventListener("click", (e) => {
+            if (e.target.classList.contains("btn-carrito")) {
+
+              console.log("CLICK EN BOTÓN CARRITO ✔");
+
+              // 1) Verificar login
+              const usuarioLogueado = sessionStorage.getItem("usuarioLogueado");
+              if (!usuarioLogueado) {
+                alert("Debes iniciar sesión para agregar productos al carrito.");
+                const basePath = window.location.pathname.includes("/assets/pages/") 
+                ? "./" 
+                : "assets/pages/";
+                window.location.href = `${basePath}login_usuarios.html`;
+                return;
+              }
+
+              // 2) Obtener datos del producto
+              const card = e.target.closest(".card-producto");
+
+              const titulo = card.querySelector("h3").textContent;
+              const precio = parseFloat(
+                card.querySelector(".precio").textContent.replace("$", "").replace(".", "")
+              );
+              const imagen = card.querySelector("img").src;
+              const cantidad = parseInt(card.querySelector(".cantidad").textContent);
+
+              const item = { titulo, precio, imagen, cantidad };
+
+              // 3) Guardar en localStorage
+              let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+              carrito.push(item);
+              localStorage.setItem("carrito", JSON.stringify(carrito));
+
+              alert("Producto agregado al carrito ✔");
+            }
+          });
+
         } else {
           contenedor.innerHTML = "<p>No hay productos disponibles.</p>";
         }
@@ -60,3 +99,4 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => console.error("Error al cargar los productos:", error));
 });
+
