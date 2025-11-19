@@ -39,7 +39,7 @@
           "id": 5,
           "titulo": "Adidas ORIGINALS CAMPUS VULC",
           "precio": 220000,
-          "imagen": "../img/hombres/descarga (4).jpg",
+          "imagen": "../img/hombres/descarga (4).webp",
           "categoria": "hombre",
           "descripcion": "Zapatillas Adidas ORIGINALS CAMPUS estilo vintage"
         },
@@ -47,7 +47,7 @@
           "id": 6,
           "titulo": "Adidas Running X_PLRBOOST",
           "precio": 185000,
-          "imagen": "../img/hombres/descarga.jpg",
+          "imagen": "../img/hombres/descarga.webp",
           "categoria": "hombre",
           "descripcion": "Zapatillas running Adidas con tecnología Boost"
         },
@@ -55,7 +55,7 @@
           "id": 7,
           "titulo": "Puma Suede Classic",
           "precio": 200000,
-          "imagen": "../img/hombres/descarga (1).jpg",
+          "imagen": "../img/hombres/descarga (1).webp",
           "categoria": "hombre",
           "descripcion": "Zapatillas Puma Suede Classic, un clásico urbano"
         },
@@ -63,7 +63,7 @@
           "id": 8,
           "titulo": "Puma R22 Black",
           "precio": 230000,
-          "imagen": "../img/hombres/descarga (2).jpg",
+          "imagen": "../img/hombres/descarga (2).webp",
           "categoria": "hombre",
           "descripcion": "Zapatillas Puma R22 color negro, diseño moderno"
         }
@@ -76,7 +76,7 @@
           "id": 9,
           "titulo": "Adidas Running Pink",
           "precio": 215000,
-          "imagen": "../img/mujeres/descarga (1).jpg",
+          "imagen": "../img/mujeres/descarga (1).webp",
           "categoria": "mujer",
           "descripcion": "Zapatillas running Adidas color rosa"
         },
@@ -84,7 +84,7 @@
           "id": 10,
           "titulo": "Nike Air Max 97 Pink",
           "precio": 300000,
-          "imagen": "../img/mujeres/descarga (2).jpg",
+          "imagen": "../img/mujeres/descarga (2).webp",
           "categoria": "mujer",
           "descripcion": "Zapatillas Nike Air Max 97 color rosa"
         },
@@ -92,7 +92,7 @@
           "id": 11,
           "titulo": "Nike Running Green",
           "precio": 230000,
-          "imagen": "../img/mujeres/descarga (3).jpg",
+          "imagen": "../img/mujeres/descarga (3).webp",
           "categoria": "mujer",
           "descripcion": "Zapatillas running Nike color verde"
         },
@@ -100,7 +100,7 @@
           "id": 12,
           "titulo": "Puma Running Pink",
           "precio": 190000,
-          "imagen": "../img/mujeres/descarga.jpg",
+          "imagen": "../img/mujeres/descarga.webp",
           "categoria": "mujer",
           "descripcion": "Zapatillas running Puma color rosa"
         },
@@ -108,7 +108,7 @@
           "id": 13,
           "titulo": "UnderArmour Violet",
           "precio": 195000,
-          "imagen": "../img/mujeres/images.jpg",
+          "imagen": "../img/mujeres/images.webp",
           "categoria": "mujer",
           "descripcion": "Zapatillas UnderArmour color violeta"
         },
@@ -116,7 +116,7 @@
           "id": 14,
           "titulo": "Nike Air Max 97 Brown",
           "precio": 310000,
-          "imagen": "../img/mujeres/images (1).jpg",
+          "imagen": "../img/mujeres/images (1).webp",
           "categoria": "mujer",
           "descripcion": "Zapatillas Nike Air Max 97 color marrón"
         },
@@ -124,7 +124,7 @@
           "id": 15,
           "titulo": "Nike Urban White",
           "precio": 200000,
-          "imagen": "../img/mujeres/images (2).jpg",
+          "imagen": "../img/mujeres/images (2).webp",
           "categoria": "mujer",
           "descripcion": "Zapatillas urbanas Nike color blanco para mujer"
         },
@@ -132,7 +132,7 @@
           "id": 16,
           "titulo": "Nike Running Violet",
           "precio": 220000,
-          "imagen": "../img/mujeres/images (3).jpg",
+          "imagen": "../img/mujeres/images (3).webp",
           "categoria": "mujer",
           "descripcion": "Zapatillas running Nike color violeta"
         }
@@ -145,7 +145,7 @@
           "id": 17,
           "titulo": "Nike Court Borough Low 2",
           "precio": 100000,
-          "imagen": "../img/niños/descarga.jpg",
+          "imagen": "../img/niños/descarga.webp",
           "categoria": "niño",
           "descripcion": "Zapatillas Nike para niños, cómodas y resistentes"
         },
@@ -153,7 +153,7 @@
           "id": 18,
           "titulo": "Puma Pink Kids",
           "precio": 110000,
-          "imagen": "../img/niños/images (5).jpg",
+          "imagen": "../img/niños/images (5).webp",
           "categoria": "niño",
           "descripcion": "Zapatillas Puma color rosa para niños"
         },
@@ -161,7 +161,7 @@
           "id": 19,
           "titulo": "Puma Kid 180A Black",
           "precio": 170000,
-          "imagen": "../img/niños/images.jpg",
+          "imagen": "../img/niños/images.webp",
           "categoria": "niño",
           "descripcion": "Zapatillas Puma negras para niños"
         },
@@ -169,7 +169,7 @@
           "id": 20,
           "titulo": "Botas DC Niño Black and Red",
           "precio": 90000,
-          "imagen": "../img/niños/images (1).jpg",
+          "imagen": "../img/niños/images (1).webp",
           "categoria": "niño",
           "descripcion": "Botas DC para niño color negro y rojo"
         },
@@ -177,7 +177,7 @@
           "id": 21,
           "titulo": "Topper Lona White Kids",
           "precio": 70000,
-          "imagen": "../img/niños/images (2).jpg",
+          "imagen": "../img/niños/images (2).webp",
           "categoria": "niño",
           "descripcion": "Zapatillas Topper de lona blancas para niños"
         },
@@ -185,7 +185,7 @@
           "id": 22,
           "titulo": "Nike Cosmic Runner Kids",
           "precio": 115000,
-          "imagen": "../img/niños/descarga (3).jpg",
+          "imagen": "../img/niños/descarga (3).webp",
           "categoria": "niño",
           "descripcion": "Zapatillas Nike Cosmic Runner para niños"
         },
@@ -193,7 +193,7 @@
           "id": 23,
           "titulo": "Puma Kids LightBlue",
           "precio": 95000,
-          "imagen": "../img/niños/images (3).jpg",
+          "imagen": "../img/niños/images (3).webp",
           "categoria": "niño",
           "descripcion": "Zapatillas Puma azul claro para niños"
         },
@@ -201,7 +201,7 @@
           "id": 24,
           "titulo": "Adidas Football Kids",
           "precio": 110000,
-          "imagen": "../img/niños/images (4).jpg",
+          "imagen": "../img/niños/images (4).webp",
           "categoria": "niño",
           "descripcion": "Zapatillas Adidas para fútbol infantil"
         }

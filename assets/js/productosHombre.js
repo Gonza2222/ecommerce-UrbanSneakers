@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
           card.classList.add("card-producto");
 
           card.innerHTML = `
-            <img src="${producto.imagen}" alt="${producto.titulo}" class="img-producto" />
+            <img src="${producto.imagen}" alt="${producto.titulo}" class="img-producto" loading="lazy"/>
             <h3>${producto.titulo}</h3>
             <p>${producto.descripcion}</p>
             <p class="precio">$${producto.precio.toLocaleString("es-AR")}</p>
